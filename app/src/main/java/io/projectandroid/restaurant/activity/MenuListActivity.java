@@ -36,7 +36,9 @@ import io.projectandroid.restaurant.model.Table;
 
 public class MenuListActivity extends AppCompatActivity {
     public static final String EXTRA_TABLE ="extra_table";
+    public static final Integer RESULT_CODE=101;
     private ListView mListViewMenu;
+
     private Menu mMenu;
     private MenuListActivity mActivity = this;
     private Table mTable;
@@ -63,7 +65,7 @@ public class MenuListActivity extends AppCompatActivity {
                 Intent intent = new Intent(mActivity, MealDeatailActivity.class);
                 intent.putExtra(MealDeatailActivity.CURRENT_MEAL, mMenu.getListMeals().get(position));
                 intent.putExtra(MealDeatailActivity.CURRENT_TABLE, mTable);
-                mActivity.startActivity(intent);
+                mActivity.startActivityForResult(intent, RESULT_CODE);
 
 
 
@@ -181,8 +183,18 @@ public class MenuListActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        setResult(RESULT_OK);
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_TABLE, mTable));
         super.onBackPressed();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==RESULT_CODE && resultCode == Activity.RESULT_OK){
+            mTable=(Table)data.getSerializableExtra(MealDeatailActivity.CURRENT_TABLE);
+        }
+
     }
 }
 
@@ -219,6 +231,8 @@ class MenuListAdapter extends ArrayAdapter<String> {
         imageView.setImageResource(resID);
         return rowView;
     }
+
+
 
 
 }

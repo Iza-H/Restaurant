@@ -14,13 +14,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import io.projectandroid.restaurant.R;
+import io.projectandroid.restaurant.activity.MealDeatailActivity;
 import io.projectandroid.restaurant.activity.MenuListActivity;
 import io.projectandroid.restaurant.model.Table;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TableFragment extends Fragment {
+public class TableFragment extends Fragment{
 
     public static final String ARG_TABLE = "table";
     public static final Integer RESULT_REQUEST = 1;
@@ -93,20 +94,17 @@ public class TableFragment extends Fragment {
 
     }
 
-
-
-
-
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK){
+            mTable=(Table)data.getSerializableExtra(MenuListActivity.EXTRA_TABLE);
             updateTableInfo();
         }
 
     }
+
 
 
 }

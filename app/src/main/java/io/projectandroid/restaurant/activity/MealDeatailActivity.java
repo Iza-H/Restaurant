@@ -1,5 +1,6 @@
 package io.projectandroid.restaurant.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.internal.widget.AdapterViewCompat;
@@ -99,6 +100,7 @@ public class MealDeatailActivity extends AppCompatActivity {
                 mTable.getMeal().add(orderedMeal);
                 mTable.setTotalPrice(mTable.getTotalPrice()+mTotalPriceValue);
                 mTable.setFree(false);
+                setResult(RESULT_OK, new Intent().putExtra(CURRENT_TABLE, mTable));
                 mActivity.finish();
 
             }
@@ -119,5 +121,7 @@ public class MealDeatailActivity extends AppCompatActivity {
 
     }
 
-    
+
+
+
 }

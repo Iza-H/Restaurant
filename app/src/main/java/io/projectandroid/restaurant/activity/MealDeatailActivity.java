@@ -118,4 +118,6 @@ public class MealDeatailActivity extends AppCompatActivity {
         //mImg.setImageResource("");
 
     }
+
+    
 }

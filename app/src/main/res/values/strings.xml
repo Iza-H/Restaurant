@@ -10,6 +10,8 @@
     <string name="quantity_choose_txt">Choose a quantity</string>
     <string name="comments_txt">Comments...</string>
     <string name="total_price_txt">Total price: %.2fE</string>
+    <string name="quantity_text">Quantity: %d</string>
+    <string name="price_unit_txt">Price unit: %0,f</string>
     <string-array name="quantity_arrays">
         <item>1</item>
         <item>2</item>

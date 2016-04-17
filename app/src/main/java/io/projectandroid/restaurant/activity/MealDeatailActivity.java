@@ -95,7 +95,7 @@ public class MealDeatailActivity extends AppCompatActivity {
                 if ( mTable.getMeal()==null){
                     List<OrderedMeal> menu = new ArrayList<OrderedMeal>();
                     mTable.setMeal(menu);
-                    mTable.setTotalPrice(mTotalPriceValue);
+                    mTable.setTotalPrice(0);
                 }
                 mTable.getMeal().add(orderedMeal);
                 mTable.setTotalPrice(mTable.getTotalPrice()+mTotalPriceValue);
@@ -117,7 +117,6 @@ public class MealDeatailActivity extends AppCompatActivity {
         mPrice.setText(String.format("Price: %.02f", mMeal.getPrice()));
         int resID = getResources().getIdentifier(mMeal.getImg() , "drawable", getPackageName());
         mImg.setImageResource(resID);
-        //mImg.setImageResource("");
 
     }
 

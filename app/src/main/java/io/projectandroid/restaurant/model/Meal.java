@@ -18,6 +18,10 @@ public class Meal implements Serializable{
         this.alergics = alergics;
     }
 
+    public Meal() {
+
+    }
+
     public String getName() {
         return name;
     }

@@ -140,7 +140,6 @@ public class MenuListActivity extends AppCompatActivity {
             @Override
             protected void onProgressUpdate(Integer... values) {
                 super.onProgressUpdate(values);
-                //mProgress.setProgress(values[0]);
 
             }
 

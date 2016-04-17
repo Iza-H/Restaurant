@@ -1,6 +1,8 @@
 package io.projectandroid.restaurant.fragment;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.FragmentManager;
 
@@ -16,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.app.Fragment;
 import io.projectandroid.restaurant.R;
+import io.projectandroid.restaurant.activity.MenuListActivity;
 import io.projectandroid.restaurant.model.Table;
 import io.projectandroid.restaurant.model.Tables;
 
@@ -96,6 +99,7 @@ public class TablePagerFragment extends Fragment {
         }
     }
 
+
     public void showTable(int position){
         mPager.setCurrentItem(position);
         updateTableInfo();
@@ -147,7 +151,7 @@ class TablePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public  android.app.Fragment getItem(int position) {
-         Table table = mTables .getTables().get(position);
+         Table table = mTables.getTables().get(position);
          TableFragment fragment = new TableFragment().newInstance(table);
          return fragment;
     }

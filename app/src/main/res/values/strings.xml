@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Restaurant</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="clear_txt">Clear</string>
+    <string name="add_meal_txt">Add meal</string>
+    <string name="add_txt">Add</string>
+    <string name="return_txt">Return</string>
+    <string name="quantity_choose_txt">Choose a quantity</string>
+    <string name="comments_txt">Comments...</string>
+    <string name="total_price_txt">Total price: %.2fE</string>
+    <string-array name="quantity_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+</resources>
